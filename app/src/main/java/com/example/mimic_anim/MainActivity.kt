@@ -3,7 +3,6 @@ package com.example.mimic_anim
 import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 
 class MainActivity : AppCompatActivity() {
@@ -13,18 +12,18 @@ class MainActivity : AppCompatActivity() {
 
         val rollButton : Button = findViewById(R.id.button)
         rollButton.setOnClickListener{
-            rollDice()
+            getAnimal()
         }
     }
 
-    private fun rollDice() {
-        val dice = Dice(6)
+    private fun getAnimal() {
+        val jungle = Jungle(listOf("Cat","Dog","Wolf","Snake"));
         val mssgBox : TextView = findViewById(R.id.message)
-        mssgBox.text = dice.roll().toString()
+        mssgBox.text = jungle.roll().toString()
     }
 }
-class Dice(val numSides: int){
-    fun roll(): Int {
-        return (1..numSides).random()
+class Jungle(val animals : List<String>){
+    fun roll(): String {
+        return animals.get((0..animals.size).random())
     }
 }
