@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">mimic-anim</string>
+    <string name="roll">Roll</string>
+    <string name="message">message</string>
+</resources>
